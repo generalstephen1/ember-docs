@@ -1,153 +1,163 @@
 
 ## init
-### When
+#### When
 Runs once on instatiation of this component
-### Use
+#### Use
 
-### Example
+#### Example
 
-### Syntax
+#### Syntax
 
 ```javascript
 init() {
     this._super(...arguments);
 },
 ```
+******
 
 ## didReceiveAttrs
-### When
+#### When
 Runs after init and on subsequent re-renders (unless this has triggered internally) if the components attributes have changed.
-### Use
+#### Use
 Can be thought of as an observer, runs logic every time an attribute changes.
-### Example
+#### Example
 If you have some data in an attr that may change type but should be internally consistent within the component, checks and conversion can happen here.
-### Syntax
+#### Syntax
 ```javascript
 didReceiveAttrs() {
     this._super(...arguments);
 },
 ```
+******
 
 ## didRender
-### When
+#### When
 Called during both render and re-render after template has and DOM has updated.
-### Use
+#### Use
 Usually used to perform post processing on the DOM after it's been updated.
-### Example
+#### Example
 After causing a re-render on a long list, finding the currently selected option and scrolling to that position.
-### Syntax
+#### Syntax
 ```javascript
 didRender() {
     this._super(...arguments);
 },
 ```
+******
 
 ## didUpdate
-### When
+#### When
 Called once the component has finished updating itself
-### Use
+#### Use
 (Re)enable fields that relied on a component updating.
-### Example
+#### Example
 A submit button is desabled on action, enabled once the return from submission updates a field on the form.
-### Syntax
+#### Syntax
 ```javascript
 didUpdate() {
     this._super(...arguments);
 },
 ```
+******
 
 ## didUpdateAttrs
-### When
+#### When
 Prior to a re-render that is triggered by an attr change (not a forced re-render via `component.rerender`).
-### Use
+#### Use
 To execute code when a specific attr changes, can be an effective alternative to an observer.
-### Example
+#### Example
 Useful for fixing validation UI notifications, IE an invalid input warning that then becomes valid.
-### Syntax
+#### Syntax
 ```javascript
 didUpdateAttrs() {
     this._super(...arguments);
 },
 ```
+******
 
 ## didInsertElement
-### When
+#### When
 Once the component's element has been inserted into the DOM AND is accessible via the components $() method.
-### Use
+#### Use
 Initialising anything that requires a DOM node to bind to.
-### Example
+#### Example
 Adding a third party date picker to a form.
-### Syntax
+#### Syntax
 ```javascript
 didInsertElement() {
     this._super(...arguments);
 },
 ```
+******
 
 ## didDestroyElement
-### When
+#### When
 After component is destroyed
-### Use
+#### Use
 
-### Example
+#### Example
 
-### Syntax
+#### Syntax
 ```javascript
 didDestroyElement() {
     this._super(...arguments);
 },
 ```
+******
 
 ## willRender
-### When
+#### When
 On both render and re-render this is called when
-### Use
+#### Use
 
-### Example
+#### Example
 
-### Syntax
+#### Syntax
 ```javascript
 willRender() {
     this._super(...arguments);
 },
 ```
+******
 
 ## willUpdate
-### When
+#### When
 On re-render this is called before the component updates
-### Use
+#### Use
 
-### Example
+#### Example
 
-### Syntax
+#### Syntax
 ```javascript
 willUpdate() {
     this._super(...arguments);
 },
 ```
+******
 
 ## willDestroyElement
-### When
+#### When
 When a component detects that it should remove itself from the DOM
-### Use
+#### Use
 Run teardown logic for that component.
-### Example
+#### Example
 Removing listeners for elements within a component before it is destroyed. Updating UI based on elements existing/being destroyed.
-### Syntax
+#### Syntax
 ```javascript
 willDestroyElement() {
     this._super(...arguments);
 },
 ```
+******
 
 ## willClearRender
-### When
+#### When
 Called when a component is about to re-render but before any teardown has occurred.
-### Use
+#### Use
 A good time to tear down things that relied on DOM state.
-### Example
+#### Example
 Tear down manual observers attached to DOM state.
-### Syntax
+#### Syntax
 ```javascript
 willClearRender() {
     this._super(...arguments);
